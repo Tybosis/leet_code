@@ -14,5 +14,3 @@ def count_primes(n)
   end
   candidates
 end
-
-p count_primes(121)
