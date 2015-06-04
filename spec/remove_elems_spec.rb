@@ -4,6 +4,8 @@ require 'remove_elems'
 describe 'remove elems method' do
   before do
     linked = LinkedList.new
+  end
+
   it 'should work if only one element exists' do
     linked.add 1
     linked.remove_elems 1
