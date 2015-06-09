@@ -15,15 +15,15 @@
 
 def rot13(message)
   ans = message.chars.map do |letter|
-    if letter =~ /[a-zA-Z]/
-      if (letter.ord > 77 && letter.ord < 97) || letter.ord > 109
-        (letter.ord - 13).chr
-      else
-        (letter.ord + 13).chr
-      end
-    else
-      letter
-    end
+    letter =~ /[a-zA-Z]/ ? rotate_char(letter) : letter
   end
   ans.join
+end
+
+def rotate_char(letter)
+  if (letter.ord > 77 && letter.ord < 97) || letter.ord > 109
+    (letter.ord - 13).chr
+  else
+    (letter.ord + 13).chr
+  end
 end
