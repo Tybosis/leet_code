@@ -24,3 +24,16 @@
 # result, the sum of the numbers for which 5 is a factor is 0 so we have [5, 0]
 # in the result amongst others.
 #
+require 'prime'
+
+def sumOfDivided(lst)
+  p lst
+  num_primes_hash = create_hash(lst)
+end
+
+def create_hash(list)
+  list.each_with_object({}) do |num, num_primes_hash|
+    num_primes_hash[num] = Prime.prime_division(num).map{ |set| set[0] }
+  end
+end
+
