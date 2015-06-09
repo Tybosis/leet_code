@@ -30,6 +30,17 @@ def sumOfDivided(lst)
   p lst
   num_primes_hash = create_hash(lst)
   all_primes = all_primes_array(num_primes_hash)
+  ans = []
+  all_primes.each do |prime|
+    holder = 0
+    lst.each do |number|
+      if num_primes_hash[number].include? prime
+        holder += number
+      end
+    end
+    ans << [prime, holder]
+  end
+  ans.sort_by{|pair| pair[0]}.reject{|pair| pair[0] == -1}
 end
 
 def create_hash(list)
