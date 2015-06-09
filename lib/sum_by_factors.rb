@@ -29,11 +29,20 @@ require 'prime'
 def sumOfDivided(lst)
   p lst
   num_primes_hash = create_hash(lst)
+  all_primes = all_primes_array(num_primes_hash)
 end
 
 def create_hash(list)
   list.each_with_object({}) do |num, num_primes_hash|
     num_primes_hash[num] = Prime.prime_division(num).map{ |set| set[0] }
   end
+end
+
+def all_primes_array(hash)
+  ans = []
+  hash.map do |key, value|
+    ans += value
+  end
+  ans.uniq
 end
 
