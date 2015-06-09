@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 require 'rot13'
 
 describe 'rot 13 decryptor method' do
@@ -7,8 +7,8 @@ describe 'rot 13 decryptor method' do
   end
 
   it 'should work for a longer phrase' do
-    rot13("This is my first ROT13 excercise!").must_equal
-          "Guvf vf zl svefg EBG13 rkprepvfr!"
+    rot13("This is my first ROT13 excercise!").must_equal(
+          "Guvf vf zl svefg EBG13 rkprepvfr!")
   end
 
   it 'should work for even longer phrase' do

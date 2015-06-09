@@ -12,3 +12,18 @@
 # Test.expect(rot13("EBG13 rknzcyr.") == "ROT13 example.");
 # Test.expect(rot13("This is my first ROT13 excercise!") ==
 #                   "Guvf vf zl svefg EBG13 rkprepvfr!")
+
+def rot13(message)
+  ans = message.chars.map do |letter|
+    if letter =~ /[a-zA-Z]/
+      if (letter.ord > 77 && letter.ord < 97) || letter.ord > 109
+        (letter.ord - 13).chr
+      else
+        (letter.ord + 13).chr
+      end
+    else
+      letter
+    end
+  end
+  ans.join
+end
